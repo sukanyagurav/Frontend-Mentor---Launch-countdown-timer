@@ -1,0 +1,172 @@
+
+:root{
+    --gray-blue: hsl(237, 18%, 59%);
+    --light-red: hsl(345, 95%, 68%);
+    --white: hsl(0, 0%, 100%);
+    --dark-blue: hsl(236, 21%, 26%);
+    --dark-blue-2: hsl(235, 16%, 14%);
+    --dark-blue-3: hsl(234, 17%, 12%);
+}
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display:grid;
+    grid-template-areas: 'header'
+    'main'
+    'footer';
+    grid-template-columns: 1fr;
+    grid-template-rows: 10rem 1fr 10rem;
+    max-width: 1440px;
+    margin-inline: auto;
+    min-height: 100vh;
+   background-image: linear-gradient(180deg,var(--dark-blue-2),var(--dark-blue));
+   background-repeat: no-repeat;
+   font-family: 'Red Hat Text', sans-serif;
+   text-align: center;
+   text-transform: uppercase;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+main::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: url('images/bg-stars.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    top:0;
+    left:0;
+    
+}
+header{
+    grid-area: header;
+    padding: 2rem 1rem;
+}
+header h1{
+   color: var(--white);
+   letter-spacing: 0.8rem;
+}
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:3rem;
+    grid-area: main;
+  
+}
+.box h3{
+    color: var(--white);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+.box-content{
+    width: 130px;
+    height: 130px;
+    background-color: var(--dark-blue-2);
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 20px;
+}
+.top-box{
+    position: absolute;
+    top:0;
+    width:100%;
+    height:90%;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -30px;
+    background-color: var(--dark-blue);
+
+}
+.backdrop{
+    position: absolute;
+    width: 100%;
+    height: 49%;
+    background-color: rgba(0, 0, 0, 0.17);
+    z-index: 2000;
+    top:0;
+    overflow: hidden;
+
+}
+
+hr{
+    position: absolute;
+    height: 0.1px;
+    width:100%;
+    top: 49%;
+    left: 0;
+    z-index: 99;
+    border-color: #00000036;
+}
+.top-box::after,.top-box::before{
+    position: absolute;
+    content: '';
+    width: 11px;
+    height: 11px;
+    background-color: var(--dark-blue-2);
+    border-radius: 50%;
+    right: -4px;
+    top: 50%;
+
+}
+.top-box::before{
+    left:-4px;
+}
+.box-content h2{
+    position: relative;
+    z-index: 20;
+    color: var(--light-red);
+    font-size: 4rem;
+    opacity:0.8;
+    font-size: clamp(1rem, 1rem + 3.9vw,4rem);
+}
+footer{
+    background-image: url('images/pattern-hills.svg');
+    background-repeat: no-repeat;
+    padding:4rem 2rem;
+    grid-area: footer;
+    color: var(--white);
+    text-transform: initial;
+   background-size: cover;
+}
+
+.social-links{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+    margin-bottom: 1.2rem;
+}
+@media(max-width:700px){
+    .box-content{
+        width:100px;
+        height:100px;
+    }
+}
+@media (max-width:600px){
+    main{
+        gap:1rem;
+    }
+    .top-box::before,.top-box::after{
+        width: 8px;
+        height: 8px;
+    }
+    .box-content{
+        width: 65px;
+        height: 65px;
+       
+    }
+    .box  h3{
+        font-size: 0.7rem;
+    }
+    
+}
