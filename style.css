@@ -61,9 +61,11 @@ main{
   
 }
 .box h3{
-    color: var(--white);
-    font-size: 0.9rem;
+    color: var( --gray-blue);
+    font-size: 0.8rem;
     margin-top: 1rem;
+    font-weight: 100;
+    letter-spacing: 2.5px;
 }
 .box-content{
     width: 130px;
@@ -127,6 +129,7 @@ hr{
     font-size: 4rem;
     opacity:0.8;
     font-size: clamp(1rem, 1rem + 3.9vw,4rem);
+    
 }
 footer{
     background-image: url('images/pattern-hills.svg');
