@@ -59,7 +59,8 @@ main{
     justify-content: center;
     gap:3rem;
     grid-area: main;
-  
+    position: relative;
+    z-index: 99999;
 }
 .launchdown{
     display: flex;
@@ -72,10 +73,23 @@ main{
     gap:1rem;
     align-items: center;
     position: relative;
-    z-index: 99999;
+    z-index: 999;
     margin-bottom: 2rem;
     color: var(--light-red);
     
+}
+.svg{
+    width: 500px;
+    height:500px;
+    position: absolute;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+}
+.hide{
+    display: none;
 }
 .error{
     font-weight: 100;
@@ -83,6 +97,7 @@ main{
     bottom: -35px;
     font-size: 11px; 
     display: none;
+    text-align: center;
 }
 .launchdown-input input{
     font-size: 17px;
