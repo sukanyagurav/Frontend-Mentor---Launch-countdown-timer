@@ -54,11 +54,45 @@ header h1{
 }
 main{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap:3rem;
     grid-area: main;
   
+}
+.launchdown{
+    display: flex;
+    align-items: center;
+    gap:1rem;
+    justify-content: center;
+}
+.launchdown-input
+{   display: flex;
+    gap:1rem;
+    align-items: center;
+    position: relative;
+    z-index: 99999;
+    margin-bottom: 2rem;
+    color: var(--light-red);
+    
+}
+.error{
+    font-weight: 100;
+    position: absolute;
+    bottom: -35px;
+    font-size: 11px; 
+    display: none;
+}
+.launchdown-input input{
+    font-size: 17px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--dark-blue);
+    font-family: inherit;
+    color: inherit;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 20px;
 }
 .box h3{
     color: var( --gray-blue);
@@ -159,6 +193,11 @@ footer{
 @media (max-width:600px){
     main{
         gap:1rem;
+    }
+   
+    .launchdown-input
+    {
+        flex-direction: column;
     }
     .top-box::before,.top-box::after{
         width: 8px;
