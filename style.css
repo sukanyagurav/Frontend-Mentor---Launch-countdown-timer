@@ -27,6 +27,7 @@ body{
    font-family: 'Red Hat Text', sans-serif;
    text-align: center;
    text-transform: uppercase;
+overflow-x:hidden;
 }
 a{
     text-decoration: none;
